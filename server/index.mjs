@@ -18,9 +18,13 @@ async function main() {
   loadEnv(ROOT);
 
   const PORT = Number(process.env.PORT ?? 4173);
-  // Loopback only. Binding 0.0.0.0 would trigger the Windows Firewall prompt
-  // on first launch, which is exactly the friction this build avoids.
-  const HOST = '127.0.0.1';
+  // Loopback by default: binding 0.0.0.0 would trigger the Windows Firewall
+  // prompt on first launch of the portable build, which is exactly the
+  // friction that package is designed to avoid.
+  //
+  // Hosted deployments must override this with HOST=0.0.0.0, otherwise the
+  // platform's router cannot reach the process.
+  const HOST = process.env.HOST ?? '127.0.0.1';
 
   const app = Fastify({ logger: { level: process.env.LOG_LEVEL ?? 'warn' } });
 
@@ -56,6 +60,7 @@ async function main() {
 
   await app.listen({ port: PORT, host: HOST });
   console.log(`\n  Blast Radius is running at http://localhost:${PORT}\n`);
+  if (HOST !== '127.0.0.1') console.log(`  (listening on ${HOST}:${PORT})\n`);
   if (!staticDir) console.log('  (no built frontend found — run `npm run build:web`)\n');
 
   for (const signal of ['SIGINT', 'SIGTERM']) {

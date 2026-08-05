@@ -15,6 +15,7 @@
     "dev:server": "node --watch server/index.mjs",
     "dev:web": "vite --config web/vite.config.js",
     "build:web": "vite build --config web/vite.config.js",
+    "build": "npm run build:web",
     "start": "node server/index.mjs",
     "package:windows": "node package/build-windows.mjs"
   },

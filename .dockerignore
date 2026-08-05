@@ -1,0 +1,10 @@
+node_modules
+web/dist
+package/build
+package/cache
+.git
+.env
+.env.local
+*.zip
+docs/screenshots
+.DS_Store
