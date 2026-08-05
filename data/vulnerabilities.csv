@@ -1,0 +1,225 @@
+id,aliases,severity,cvss,summary,published
+GHSA-cm5g-3pgc-8rg4,CVE-2024-10491,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:N/A:N,Express ressource injection,2024-10-29
+GHSA-gpvr-g6gh-9mc2,CVE-2014-6393,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,No Charset in Content-Type Header in express,2018-10-23
+GHSA-jj78-5fmv-mv28,CVE-2024-9266,LOW,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N,Express Open Redirect vulnerability,2024-10-03
+GHSA-qw6h-vgh9-j6wx,CVE-2024-43796,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L,express vulnerable to XSS via response.redirect(),2024-09-10
+GHSA-9qj9-36jm-prpv,CVE-2017-16119,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in fresh,2018-07-24
+GHSA-jgqf-hwc5-hh37,CVE-2015-8859,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N,Root Path Disclosure in send,2017-10-24
+GHSA-m6fv-jmcg-4jfg,CVE-2024-43799,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L,send vulnerable to template injection that can lead to XSS,2024-09-10
+GHSA-xwg4-93c6-3h42,CVE-2014-6394,LOW,,Directory Traversal in send,2017-10-24
+GHSA-9vvw-cc9w-f27h,CVE-2017-20165,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,debug Inefficient Regular Expression Complexity vulnerability,2023-01-09
+GHSA-gxpj-cx7g-858c,CVE-2017-16137,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service in debug,2018-08-09
+GHSA-pxg6-pf52-xh8x,CVE-2024-47764,LOW,,"cookie accepts cookie name, path, and domain with out of bounds characters",2024-10-04
+GHSA-3fw8-66wf-pr7m,CVE-2013-7370,LOW,,methodOverride Middleware Reflected Cross-Site Scripting in connect,2020-08-31
+GHSA-6w62-83g6-rfhj,CVE-2013-7371,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Node Connect Reflected Cross-Site Scripting in Sencha Labs Connect middleware,2022-05-05
+GHSA-rch9-xh7r-mqgw,CVE-2018-3717,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N,Cross-Site Scripting in connect,2018-07-26
+GHSA-92vm-wfm5-mxvv,CVE-2016-1000236,MODERATE,CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N,cookie-signature Timing Attack,2020-01-06
+GHSA-wrvr-8mpx-r7pp,CVE-2017-16138,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,mime Regular Expression Denial of Service when MIME lookup performed on untrusted user input,2018-07-20
+GHSA-3fx5-fwvr-xrjg,CVE-2015-8315,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in ms,2017-10-24
+GHSA-w9mr-4mfr-499f,CVE-2017-20162,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Vercel ms Inefficient Regular Expression Complexity vulnerability,2023-01-05
+GHSA-6rw7-vpxm-498p,CVE-2025-15284,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L,qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion,2025-12-30
+GHSA-f9cm-p3w6-xvr3,CVE-2014-10064,HIGH,,Denial-of-Service Extended Event Loop Blocking in qs,2018-10-09
+GHSA-gqgv-6jq5-jjj9,CVE-2017-1000048,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Prototype Pollution Protection Bypass in qs,2020-04-30
+GHSA-hrpp-h998-j3pp,CVE-2022-24999,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,qs vulnerable to Prototype Pollution,2022-11-27
+GHSA-fwr7-v2mv-hh25,CVE-2021-43138,HIGH,CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H,Prototype Pollution in async,2022-04-07
+GHSA-3rfm-jhwj-7488,CVE-2022-37603,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable,2022-10-14
+GHSA-76p3-8jx3-jpfq,CVE-2022-37601,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Prototype pollution in webpack loader-utils,2022-10-13
+GHSA-hhq3-ff78-jv3g,CVE-2022-37599,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS),2022-10-12
+GHSA-9c47-m6qq-7p4h,CVE-2022-46175,HIGH,CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:H,Prototype Pollution in JSON5 via Parse Method,2022-12-29
+GHSA-vh95-rmgr-6w4m,CVE-2020-7598,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,Prototype Pollution in minimist,2020-04-03
+GHSA-xvch-5gv4-984h,CVE-2021-44906,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Prototype Pollution in minimist,2022-03-18
+GHSA-34r7-q49f-h37c,CVE-2015-8857,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Incorrect Handling of Non-Boolean Comparisons During Minification in uglify-js,2017-10-24
+GHSA-c9f4-xj24-8jqx,CVE-2015-8858,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in uglify-js,2017-10-24
+GHSA-x3m3-4wpv-5vgc,CVE-2024-38999,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H,jrburke requirejs vulnerable to prototype pollution,2024-07-01
+GHSA-952p-6rrq-rcjv,CVE-2024-4067,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service (ReDoS) in micromatch,2024-05-14
+GHSA-93q8-gq69-wqmw,CVE-2021-3807,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Inefficient Regular Expression Complexity in chalk/ansi-regex,2021-09-20
+GHSA-grv7-fg5c-xmjg,CVE-2024-4068,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Uncontrolled resource consumption in braces,2024-05-14
+GHSA-c4w7-xm78-47vh,CVE-2020-7774,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,Prototype Pollution in y18n,2021-03-29
+GHSA-23c5-xmqv-rm74,CVE-2026-27904,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions,2026-02-26
+GHSA-3ppc-4f35-3m26,CVE-2026-26996,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N,minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern,2026-02-18
+GHSA-7r86-cg39-jmmj,CVE-2026-27903,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments,2026-02-26
+GHSA-f8q6-p94x-37v3,CVE-2022-3517,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,minimatch ReDoS vulnerability,2022-10-18
+GHSA-p9pc-299p-vxgp,CVE-2020-7608,MODERATE,CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L,yargs-parser Vulnerable to Prototype Pollution,2020-09-04
+GHSA-3jxr-9vmj-r5cp,CVE-2026-13149,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups,2026-07-20
+GHSA-832h-xg76-4gv6,CVE-2017-18077,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,ReDoS in brace-expansion,2018-01-29
+GHSA-f886-m6hf-6m8v,CVE-2026-33750,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H,brace-expansion: Zero-step sequence causes process hang and memory exhaustion,2026-03-26
+GHSA-7xfp-9c55-5vqj,CVE-2017-16026,MODERATE,CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N,Remote Memory Exposure in request,2018-11-09
+GHSA-p8p7-x288-28g6,CVE-2023-28155,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Server-Side Request Forgery in Request,2023-03-16
+GHSA-6chw-6frg-f759,,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in Acorn,2020-04-03
+GHSA-cf4h-3jhx-xvhq,CVE-2021-23358,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Arbitrary Code Execution in underscore,2021-05-06
+GHSA-qpx9-hpmf-5gmw,CVE-2026-27601,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H,"Underscore has unlimited recursion in _.flatten and _.isEqual, potential for DoS attack",2026-03-03
+GHSA-6394-6h9h-cfjg,,MODERATE,,Regular Expression Denial of Service,2019-06-07
+GHSA-72xf-g2v4-qvf3,CVE-2023-26136,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,tough-cookie Prototype Pollution vulnerability,2023-07-01
+GHSA-g7q5-pjjr-gqvp,CVE-2017-15010,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in tough-cookie,2018-07-24
+GHSA-qhv9-728r-6jqg,CVE-2016-1000232,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,ReDoS via long string of semicolons in tough-cookie,2018-10-10
+GHSA-43f8-2h32-f4cj,CVE-2021-23362,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service in hosted-git-info,2021-05-06
+GHSA-c2qf-rxjj-qqgw,CVE-2022-25883,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,semver vulnerable to Regular Expression Denial of Service,2023-06-21
+GHSA-x6fg-f45m-jf5q,CVE-2015-8855,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in semver,2017-10-24
+GHSA-73rr-hh4g-fpgx,CVE-2026-24001,LOW,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:U,jsdiff has a Denial of Service vulnerability in parsePatch and applyPatch,2026-01-14
+GHSA-h6ch-v84p-w6p9,,HIGH,,Regular Expression Denial of Service (ReDoS),2019-06-13
+GHSA-5fw9-fq32-wv5p,CVE-2020-7789,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,OS Command Injection in node-notifier,2020-12-21
+GHSA-2pr6-76vf-7546,,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H,Denial of Service in js-yaml,2019-06-05
+GHSA-52cp-r559-cp3m,CVE-2026-59869,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,js-yaml: YAML merge-key chains can force quadratic CPU consumption,2026-07-20
+GHSA-8j8c-7jfh-h6hx,,HIGH,,Code Injection in js-yaml,2019-06-04
+GHSA-29mw-wpgm-hmr9,CVE-2020-28500,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service (ReDoS) in lodash,2022-01-06
+GHSA-35jh-r3h4-6jhm,CVE-2021-23337 CVE-2026-4800,HIGH,CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H,Command Injection in lodash,2021-05-06
+GHSA-4xc9-xhrj-v574,CVE-2018-16487,HIGH,,Prototype Pollution in lodash,2019-02-07
+GHSA-f23m-r3pf-42rh,CVE-2025-13465 CVE-2026-2950,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L,lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`,2026-04-01
+GHSA-hj48-42vr-x3v9,CVE-2021-23343,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service in path-parse,2021-08-10
+GHSA-67hx-6x53-jw92,CVE-2023-45133,CRITICAL,CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H,Babel vulnerable to arbitrary code execution when compiling specifically crafted malicious code,2023-10-16
+GHSA-2cf5-4w76-r9qv,,HIGH,CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:L/I:H/A:L,Arbitrary Code Execution in handlebars,2020-09-04
+GHSA-2qvq-rjwj-gvw9,CVE-2026-33916,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N,Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection,2026-03-26
+GHSA-2w6w-674q-4c4q,CVE-2026-33937,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Handlebars.js has JavaScript Injection via AST Type Confusion,2026-03-27
+GHSA-3cqr-58rm-57f8,CVE-2019-20920,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:L,Arbitrary Code Execution in Handlebars,2022-02-10
+GHSA-v2p6-4mp7-3r9v,,MODERATE,,Regular Expression Denial of Service in underscore.string,2019-06-14
+GHSA-8r6j-v8pm-fqw3,CVE-2023-45311,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Code injection in fsevents,2023-10-06
+MAL-2023-462,,MODERATE,,Malicious code in fsevents (npm),2023-04-27
+GHSA-23hp-3jrh-7fpw,CVE-2026-59873,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,node-tar: Decompression/parse DoS via unlimited input,2026-07-20
+GHSA-34x7-hfp2-rc4v,CVE-2026-24842,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N,node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal,2026-01-28
+GHSA-3jfq-g458-7qm9,CVE-2021-32804,HIGH,CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N,Arbitrary File Creation/Overwrite due to insufficient absolute path sanitization,2021-08-03
+GHSA-7wpw-2hjm-89gp,CVE-2020-28499,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,Prototype Pollution in merge,2021-05-04
+GHSA-f9cm-qmx5-m98h,CVE-2018-16469,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Prototype Pollution in merge,2018-11-01
+GHSA-qh2h-chj9-jffq,CVE-2017-16042,CRITICAL,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Growl before 1.10.0 vulnerable to Command Injection,2018-06-08
+GHSA-5726-g6r9-5f22,CVE-2014-7192,HIGH,,Potential for Script Injection in syntax-error,2017-10-24
+GHSA-4gmj-3p3h-gm8h,CVE-2024-27088,LOW,,es5-ext vulnerable to Regular Expression Denial of Service in `function#copy` and `function#toStringTokens`,2024-02-26
+GHSA-4rq4-32rv-6wp6,CVE-2022-0144,HIGH,CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H,Improper Privilege Management in shelljs,2022-01-21
+GHSA-64g7-mvw6-v9qj,,MODERATE,,Improper Privilege Management in shelljs,2022-01-14
+GHSA-4hpf-3wq7-5rpr,CVE-2018-1107,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular expression deinal of service (ReDoS) in is-my-json-valid,2022-01-06
+GHSA-f522-ffg8-j8r6,CVE-2016-2537,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in is-my-json-valid,2017-10-24
+GHSA-282f-qqgm-c34q,CVE-2021-23807,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,Prototype Pollution in node-jsonpointer,2021-11-08
+GHSA-ww39-953v-wcq6,CVE-2020-28469,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,glob-parent vulnerable to Regular Expression Denial of Service in enclosure regex,2021-06-07
+GHSA-2g4f-4pwh-qvx6,CVE-2025-69873,MODERATE,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P,ajv has ReDoS when using `$data` option,2026-02-11
+GHSA-v88g-cgmw-v5xw,CVE-2020-15366,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,Prototype Pollution in Ajv,2022-02-10
+GHSA-52f5-9888-hmc6,CVE-2025-54798,LOW,CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N,tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter,2025-08-06
+GHSA-ph9p-34f9-6g65,CVE-2026-44705,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:P,tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape,2026-05-27
+GHSA-qrmc-fj45-qfc2,CVE-2018-16492,MODERATE,,Prototype Pollution in extend,2019-02-07
+GHSA-95m3-7q98-8xr5,CVE-2025-9288,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H,sha.js is missing type checks leading to hash rewind and passing on crafted data,2025-08-21
+GHSA-3xgq-45jj-v275,CVE-2024-21538,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service (ReDoS) in cross-spawn,2024-11-08
+GHSA-566m-qj78-rww5,CVE-2021-23382,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service in postcss,2022-01-07
+GHSA-6g55-p6wh-862q,CVE-2026-45623,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments,2026-07-23
+GHSA-7fh5-64p2-3v2j,CVE-2023-44270,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,PostCSS line return parsing error,2023-09-30
+GHSA-fxqj-rqcc-2cmp,CVE-2026-69153,MODERATE,CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N,PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset,2026-08-03
+GHSA-w8qv-6jwh-64r5,CVE-2021-23364,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service in browserslist,2021-05-24
+GHSA-48c2-rrv3-qjmp,CVE-2026-33532,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L,yaml is vulnerable to Stack Overflow via deeply nested YAML collections,2026-03-25
+GHSA-29gp-92wp-94q8,CVE-2018-6342,HIGH,,react-dev-utils on Windows vulnerable to Remote Code Execution,2019-01-04
+GHSA-5q6m-3h65-w53x,CVE-2021-24033,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,react-dev-utils OS Command Injection in function `getProcessForPort`,2021-03-11
+GHSA-395f-4hp3-45gv,CVE-2026-13311,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407),2026-07-20
+GHSA-qg8p-v9q4-gh34,CVE-2016-10541,CRITICAL,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Potential Command Injection in shell-quote,2019-02-18
+GHSA-4v9v-hfq4-rm2v,CVE-2025-30359,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N,webpack-dev-server users' source code may be stolen when they access a malicious web site,2025-06-04
+GHSA-79cf-xcqc-c78w,CVE-2026-6402,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N,webpack-dev-server vulnerable to cross-origin source code exposure on non-HTTPS origins,2026-05-18
+GHSA-9jgg-88mc-972h,CVE-2025-30360,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N,webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser,2025-06-04
+GHSA-cf66-xwfp-gvc4,CVE-2018-14732,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,Missing Origin Validation in webpack-dev-server,2019-01-04
+GHSA-c9g6-9335-x697,CVE-2020-7693,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Improper Input Validation in SocksJS-Node,2021-04-13
+GHSA-hh8v-jmh3-9437,CVE-2020-8823,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Cross-site scripting in SocksJS-node,2021-04-13
+GHSA-pfq8-rq6v-vf5m,CVE-2022-37620,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,kangax html-minifier REDoS vulnerability,2022-10-31
+GHSA-6h5x-7c5m-7cr7,CVE-2022-1650,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N,Exposure of Sensitive Information in eventsource,2022-05-13
+GHSA-7mc5-chhp-fmc3,CVE-2016-10539,HIGH,,Regular Expression Denial of Service in negotiator,2018-10-09
+GHSA-2pqj-h3vj-pqgw,CVE-2012-6708,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Cross-Site Scripting in jquery,2020-09-01
+GHSA-579v-mp3v-rrw5,CVE-2011-4969,MODERATE,,jQuery vulnerable to Cross-Site Scripting (XSS),2022-05-14
+GHSA-6c3j-c64m-qhgq,CVE-2019-11358,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,"XSS in jQuery as used in Drupal, Backdrop CMS, and other products",2019-04-26
+GHSA-c3x7-gjmx-r2ff,CVE-2015-1164,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:L/A:N,Open Redirect in serve-static,2020-08-31
+GHSA-cm22-4g7w-348p,CVE-2024-43800,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L,serve-static vulnerable to template injection that can lead to XSS,2024-09-10
+GHSA-37ch-88jc-xwx2,CVE-2024-45296 CVE-2026-4867,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters,2026-03-27
+GHSA-9wv6-86v2-598j,CVE-2024-45296 CVE-2026-4867,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,path-to-regexp outputs backtracking regular expressions,2024-09-09
+GHSA-v633-x5vv-hqwc,CVE-2015-8856,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Cross-Site Scripting in serve-index,2017-10-24
+GHSA-46c4-8wrp-j99v,CVE-2020-8124,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Improper Validation and Sanitization in url-parse,2022-01-06
+GHSA-8v38-pw62-9cw2,CVE-2022-0639,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,url-parse Incorrectly parses URLs that include an '@',2022-02-18
+GHSA-9m6j-fcg5-2442,CVE-2021-27515,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Path traversal in url-parse,2021-05-06
+GHSA-hgjh-723h-mx2j,CVE-2022-0686,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N,Authorization Bypass Through User-Controlled Key in url-parse,2022-02-21
+GHSA-265q-28rp-chq5,CVE-2015-8851,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,Insecure Entropy Source - Math.random() in node-uuid,2020-04-16
+GHSA-hxcm-v35h-mg2x,,HIGH,,Prototype Pollution in querystringify,2019-06-07
+GHSA-c7qv-q95q-8v27,CVE-2024-21536,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Denial of service in http-proxy-middleware,2024-10-19
+GHSA-wr3j-pwj9-hqq6,CVE-2024-29180,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N,Path traversal in webpack-dev-middleware,2024-03-21
+GHSA-r5fr-rjxr-66jc,CVE-2021-23337 CVE-2026-4800,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H,lodash vulnerable to Code Injection via `_.template` imports key names,2026-04-01
+GHSA-25mp-g6fv-mqxx,CVE-2021-43803,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Unexpected server crash in Next.js.,2021-12-07
+GHSA-3v7f-55p6-f55p,CVE-2026-33672,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching,2026-03-25
+GHSA-c2c7-rcm5-vvqj,CVE-2026-33671,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Picomatch has a ReDoS vulnerability via extglob quantifiers,2026-03-25
+GHSA-mwcw-c2x4-8c55,CVE-2024-55565,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N,Predictable results in nanoid generation when given non-integer values,2024-12-09
+GHSA-qrpm-p2h7-hrv2,CVE-2021-23566,MODERATE,CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N,Exposure of Sensitive Information to an Unauthorized Actor in nanoid,2022-01-21
+GHSA-r96c-57pf-9jjm,CVE-2018-16491,CRITICAL,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Prototype Pollution in node.extend,2019-02-07
+GHSA-54xq-cgqr-rpm3,,HIGH,CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H,sharp vulnerability in libwebp dependency CVE-2023-4863,2023-11-16
+GHSA-f88m-g3jw-g9cj,,HIGH,CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:H/VA:H/SC:N/SI:N/SA:N,"sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",2026-07-21
+GHSA-gp95-ppv5-3jc5,CVE-2022-29256,MODERATE,CVSS:3.1/AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:H/A:H,sharp vulnerable to Command Injection in post-installation over build environment,2022-06-01
+GHSA-r683-j2x4-v87g,CVE-2022-0235,HIGH,CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H,node-fetch forwards secure headers to untrusted sites,2022-01-21
+GHSA-w7rc-rwvf-8q5r,CVE-2020-15168,LOW,CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:N/A:L,The `size` option isn't honored after following a redirect in node-fetch,2020-09-10
+GHSA-968p-4wvh-cqc8,CVE-2025-27789,MODERATE,CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups,2025-03-11
+GHSA-9vrw-m88g-w75q,,HIGH,,Denial of Service in @hapi/accept,2020-09-03
+GHSA-c429-5p7v-vgjp,CVE-2020-36604,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H,hoek subject to prototype pollution via the clone function.,2022-09-25
+GHSA-4wf5-vphf-c2xc,CVE-2022-25858,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Terser insecure use of regular expressions leads to ReDoS,2022-07-16
+GHSA-8w4h-3cm3-2pm2,CVE-2018-3745,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H,Out-of-bounds Read in atob,2018-10-09
+GHSA-3g43-6gmg-66jw,CVE-2026-44495,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:L,axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge,2026-05-29
+GHSA-3p68-rc4w-qgx5,CVE-2025-62718,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N,Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF,2026-04-09
+GHSA-74fj-2j2h-c42q,CVE-2022-0155,HIGH,CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H,Exposure of sensitive information in follow-redirects,2022-01-12
+GHSA-cxjh-pqwp-8mfp,CVE-2024-28849,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N,follow-redirects' Proxy-Authorization header kept across hosts,2024-03-14
+GHSA-jchw-25xp-jwwc,CVE-2023-26159,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Follow Redirects improperly handles URLs in the url.parse() function,2024-01-02
+GHSA-pw2r-vq6v-hr8c,CVE-2022-0536,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N,Exposure of Sensitive Information to an Unauthorized Actor in follow-redirects,2022-02-10
+GHSA-664h-wqgq-64gw,,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L,Mongoose: Prototype pollution in mongoose update casting via __proto__-prefixed dotted path (Schema._getSchema/path getter),2026-07-24
+GHSA-8687-vv9j-hgph,CVE-2019-17426,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N,Improper Input Validation in Automattic Mongoose,2019-10-22
+GHSA-9m93-w8w6-76hh,CVE-2023-3696,CRITICAL,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:H,Mongoose Prototype Pollution vulnerability,2023-07-17
+GHSA-f825-f98c-gj3g,CVE-2022-2564,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H,automattic/mongoose vulnerable to Prototype pollution via Schema.path,2022-07-29
+GHSA-4jwp-vfvf-657p,CVE-2019-2391,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N,Deserialization of Untrusted Data in bson,2022-02-10
+GHSA-8462-q7x7-g2x4,CVE-2018-13863,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,js-bson vulnerable to REDoS,2018-09-17
+GHSA-v8w9-2789-6hhr,CVE-2020-7610,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Deserialization of Untrusted Data in bson,2021-05-07
+GHSA-mh5c-679w-hh4r,,HIGH,,Denial of Service in mongodb,2020-09-03
+GHSA-h466-j336-74wx,CVE-2018-16490,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,Prototype Pollution in mpath,2019-02-07
+GHSA-p92x-r36w-9395,CVE-2021-23438,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L,Type confusion in mpath,2021-09-02
+GHSA-45q2-34rf-mr94,CVE-2020-35149,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Code Injection in mquery,2020-12-18
+GHSA-m2mx-rfpw-jghv,CVE-2020-13110,HIGH,CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H,DLL Injection in kerberos,2020-09-04
+GHSA-25hc-qcg6-38wj,CVE-2024-38355,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,socket.io has an unhandled 'error' event,2024-06-19
+GHSA-fxwf-4rqh-v8g3,CVE-2020-28481,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N,CORS misconfiguration in socket.io,2021-01-20
+GHSA-268h-hp4c-crq3,,MODERATE,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N,Nodemailer: CRLF injection in Nodemailer List-* header comments allows arbitrary message header injection,2026-06-15
+GHSA-48ww-j4fc-435p,CVE-2020-7769,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,Command injection in nodemailer,2021-05-10
+GHSA-9h6g-pr28-7cqp,,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,nodemailer ReDoS when trying to send a specially crafted email,2024-01-31
+GHSA-c7w3-x93f-qmm8,,LOW,CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N,Nodemailer has SMTP command injection due to unsanitized `envelope.size` parameter,2026-03-26
+GHSA-8cj5-5rvv-wf4v,CVE-2025-48387,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N,tar-fs can extract outside the specified dir with a specific tarball,2025-06-03
+GHSA-pq67-2wwv-3xjx,CVE-2024-12905,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,tar-fs Vulnerable to Link Following and Path Traversal via Extracting a Crafted tar File,2025-03-27
+GHSA-vj76-c3g6-qr5v,CVE-2025-59343,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N,tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball,2025-09-24
+GHSA-3h5v-q93c-6h6q,CVE-2024-37890,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,ws affected by a DoS when handling a request with many HTTP headers,2024-06-17
+GHSA-58qx-3vcg-4xpx,CVE-2026-45736,MODERATE,CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N,ws: Uninitialized memory disclosure,2026-05-18
+GHSA-5v72-xg48-5rpm,,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Denial of Service in ws,2019-06-04
+GHSA-c6rq-rjc2-86v2,CVE-2017-18869,LOW,CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N,Time-of-check Time-of-use (TOCTOU) Race Condition in chownr,2022-02-10
+GHSA-pp7h-53gx-mx7r,CVE-2020-8244,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L,Remote Memory Exposure in bl,2020-09-02
+GHSA-wrw9-m778-g6mc,,MODERATE,,Memory Exposure in bl,2019-06-03
+GHSA-446m-mv8f-q348,CVE-2017-18214,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in moment,2018-03-05
+GHSA-87vv-r9j6-g5qv,CVE-2016-4055,MODERATE,CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in moment,2017-10-24
+GHSA-8hfj-j24r-96c4,CVE-2022-24785,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,Path Traversal: 'dir/../../filename' in moment.locale,2022-04-04
+GHSA-w5hq-g745-h8pq,CVE-2026-41907 CVE-2026-41988,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided,2026-04-22
+GHSA-4gxf-g5gf-22h4,CVE-2023-26132,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,dottie vulnerable to Prototype Pollution,2023-06-10
+GHSA-9965-vmph-33xx,CVE-2025-56200,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,validator.js has a URL validation bypass vulnerability in its isURL function,2025-09-30
+GHSA-v923-w3x8-wh69,CVE-2022-25896,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L,Passport vulnerable to session regeneration when a users logs in or out,2022-07-02
+GHSA-qwcr-r2fm-qrc7,CVE-2024-45590,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,body-parser vulnerable to denial of service when url encoding is enabled,2024-09-10
+GHSA-v422-hmwv-36x6,CVE-2026-12590,LOW,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L,body-parser vulnerable to denial of service when invalid limit value silently disables size enforcement,2026-07-20
+GHSA-8cf7-32gw-wr33,CVE-2022-23539,HIGH,CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N,jsonwebtoken unrestricted key type could lead to legacy keys usage ,2022-12-22
+GHSA-hjrf-2m68-5959,CVE-2022-23541,MODERATE,CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L,jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC,2022-12-22
+GHSA-qwph-4952-7xr6,CVE-2022-23540,MODERATE,CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:L,jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify(),2022-12-22
+GHSA-869p-cjfg-cm3x,CVE-2025-65945,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,auth0/node-jws Improperly Verifies HMAC Signature,2025-12-04
+GHSA-rvg8-pwq2-xj7q,,MODERATE,,Out-of-bounds Read in base64url,2020-09-01
+GHSA-pfrx-2q88-qq97,CVE-2022-33987,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Got allows a redirect to a UNIX socket,2022-06-19
+GHSA-gcx4-mw62-g8wm,CVE-2024-47068,HIGH,CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H,DOM Clobbering Gadget found in rollup bundled scripts that leads to XSS,2024-09-23
+GHSA-mw96-cpmx-2vgc,CVE-2026-27606,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:P,Rollup 4 has Arbitrary File Write via Path Traversal,2026-02-25
+GHSA-257v-vj4p-3w2h,CVE-2021-29060,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L,Regular Expression Denial of Service (ReDOS),2021-06-22
+GHSA-ff7x-qrg7-qggm,CVE-2020-8116,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L,dot-prop Prototype Pollution vulnerability,2020-07-29
+GHSA-353f-5xf4-qw67,CVE-2023-34092,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,Vite Server Options (server.fs.deny) can be bypassed using double forward-slash (//),2023-06-06
+GHSA-356w-63v5-8wf4,CVE-2025-32395,MODERATE,CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N,Vite has an `server.fs.deny` bypass with an invalid `request-target`,2025-04-11
+GHSA-4r4m-qw57-chr8,CVE-2025-31125,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N,Vite has a `server.fs.deny` bypassed for `inline` and `raw` with `?import` query,2025-03-31
+GHSA-4w7w-66w2-5vf9,CVE-2026-39365,MODERATE,CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N,Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling,2026-04-06
+GHSA-67mh-4wv8-2f99,,MODERATE,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N,esbuild enables any website to send any requests to the development server and read the response,2025-02-10
+GHSA-2328-f5f3-gj25,CVE-2026-33896,HIGH,CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N,Forge has a basicConstraints bypass in its certificate chain verification (RFC 5280 violation),2026-03-26
+GHSA-2r2c-g63r-vccr,CVE-2022-24773,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,Improper Verification of Cryptographic Signature in `node-forge`,2022-03-18
+GHSA-554w-wpv2-vw27,CVE-2025-66031,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N,node-forge has ASN.1 Unbounded Recursion,2025-11-26
+GHSA-5gfm-wpxj-wjgq,CVE-2025-12816,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N,node-forge has an Interpretation Conflict vulnerability via its ASN.1 Validator Desynchronization,2025-11-26
+GHSA-38h8-x697-gh8q,CVE-2017-16024,MODERATE,CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N,Tmp files readable by other users in sync-exec,2018-11-09
+GHSA-2m96-9w4j-wgv7,,HIGH,,Prototype Pollution in lodash.merge,2020-09-03
+GHSA-h726-x36v-rx45,,HIGH,,Prototype Pollution in lodash.merge,2020-09-03
+GHSA-5v2h-r2cx-5xgj,CVE-2022-21681,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Inefficient Regular Expression Complexity in marked,2022-01-14
+GHSA-7px7-7xjx-hxm8,CVE-2017-1000427,MODERATE,CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N,Marked vulnerable to XSS from data URIs,2018-01-04
+GHSA-4xcv-9jjx-gfj3,,MODERATE,CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N,Denial of Service in mem,2019-07-05
+GHSA-mgfv-m47x-4wqp,CVE-2020-26311,MODERATE,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,useragent Regular Expression Denial of Service vulnerability,2024-10-26
+GHSA-pjmx-9xr3-82qr,CVE-2017-16030,HIGH,,ReDoS via long UserAgent header in useragent,2018-07-24
+GHSA-g36h-6r4f-3mqp,CVE-2017-16116,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Regular Expression Denial of Service in string package,2018-07-24
+GHSA-xf7w-r453-m56c,CVE-2019-13173,HIGH,CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,Arbitrary File Overwrite in fstream,2019-05-30
+GHSA-4jv9-3563-23j3,CVE-2016-20018,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,Knex.js has a limited SQL injection vulnerability,2022-12-19
+GHSA-58v4-qwx5-7f59,CVE-2019-10757,CRITICAL,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H,SQL Injection in knex,2019-10-21
+GHSA-44fp-w29j-9vj5,CVE-2025-47935,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Multer vulnerable to Denial of Service via memory leaks from unclosed streams,2025-05-19
+GHSA-5528-5vmv-3xc2,CVE-2026-3520,HIGH,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N,Multer Vulnerable to Denial of Service via Uncontrolled Recursion,2026-03-05
+GHSA-wm7h-9275-46v2,CVE-2022-24434,HIGH,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H,Crash in HeaderParser in dicer,2022-05-21
