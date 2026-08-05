@@ -194,11 +194,11 @@ function BlastPanel({ advisories, selectedId, onSelect, loading }) {
             </div>
           ) : (
             <>
-              <BlastMap graph={result.graph} highlightApplication={highlight} />
+              <BlastMap graph={result.graph} highlightChain={highlight} />
 
               <div className="section-head">
                 <span className="label">Exposed applications</span>
-                <span className="label">Hover a row to trace it on the map</span>
+                <span className="label">Hover a row to trace and label every hop</span>
               </div>
 
               <table>
@@ -215,7 +215,7 @@ function BlastPanel({ advisories, selectedId, onSelect, loading }) {
                   {apps.map((row) => (
                     <tr
                       key={row.application}
-                      onMouseEnter={() => setHighlight(row.application)}
+                      onMouseEnter={() => setHighlight(row.chain)}
                       onMouseLeave={() => setHighlight(null)}
                     >
                       <td className="mono">{row.application}</td>
