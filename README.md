@@ -175,7 +175,10 @@ present in the graph.
 Ranges are resolved to the *lowest* published version in the declared major.
 That models a lockfile that has not been refreshed in years, which is both the
 scenario the tool exists for and the reason real historical CVEs land on real
-nodes here rather than on nothing.
+nodes here rather than on nothing. The 40 root packages declare no range of
+their own, so each is pinned at roughly the 35th percentile of its release
+history — old enough to carry real advisories, recent enough that its
+dependency tree still resembles what a current project would install.
 
 The `Team`, `Application` and `Maintainer` layers are synthetic but
 deterministic: the fetcher produces byte-identical CSVs on every run. The
@@ -268,7 +271,8 @@ Expect roughly 2,772 nodes and 6,224 relationships when it completes.
 npm run smoke
 ```
 
-Runs all five queries against the live instance and asserts the results are
+Runs every query the application exposes against the live instance and
+asserts the results are
 shaped the way the UI expects. The interesting assertion is the depth one: the
 brief requires a genuine multi-hop traversal, so a run where no application is
 at least **3 hops** from an affected version is reported as a failure of the
@@ -281,7 +285,9 @@ npm run build:web
 npm start
 ```
 
-The app is at **<http://localhost:4173>**. The server binds `127.0.0.1` only.
+The app is at **<http://localhost:4173>**. The server binds `127.0.0.1` by
+default, so nothing is exposed to the network; hosted deployments override
+that with `HOST=0.0.0.0` (see [`docs/deploy.md`](docs/deploy.md)).
 
 For development with hot reload, run the two halves separately:
 
@@ -520,23 +526,37 @@ an exception.
 *Captured from a live run against a free `c0` CognoDB Cloud instance with the
 committed seed data.*
 
-![Blast radius result table](docs/screenshots/blast-radius.jpg)
-Selecting an advisory lists every reachable application with its hop count, owning team, environment, and the dependency chain that justifies the result.
+![Radial blast map for a selected advisory](docs/screenshots/blast-radius.jpg)
+
+*Selecting an advisory maps it as a force-directed graph: affected versions at
+the centre, applications pushed out to the ring matching their hop distance.*
 
 ![Exposed applications table with shortest paths](docs/screenshots/exposed-applications.jpg)
-The same traversal as a force-directed map: affected versions at the centre, applications pushed out to the ring matching their hop distance.
+
+*The same view scrolled down. Every reachable application with its hop count,
+owning team, environment, and the dependency chain that justifies the result.*
 
 ![Dependency path](docs/screenshots/dependency-path.jpg)
-"Why is this in our lockfile?" — the shortest path from an application to a package, annotated with the edge type at each step.
+
+*"Why is this in our lockfile?" — the shortest path from an application to a
+package, with the hop count and the resolved version it lands on.*
 
 ![Bus factor](docs/screenshots/bus-factor.jpg)
-Single-maintainer packages ranked by how many applications transitively reach them.
+
+*Single-maintainer packages ranked by how many applications transitively
+reach them.*
 
 ![Shared surface](docs/screenshots/shared-surface.jpg)
-The intersection of two applications' full transitive closures, with the size of each side's exclusive set.
+
+*The intersection of two applications' full transitive closures, with the
+size of each side's exclusive set.*
 
 ![Upgrade impact](docs/screenshots/upgrade-impact.jpg)
-Pick a package and version, get the list of applications and teams that need to retest.
+
+*Pick a package and get the list of applications and teams that need to retest,
+with the version each one resolves to. The query also accepts a specific
+version through the API; the panel deliberately leaves it unset to cover every
+version in the graph.*
 
 ---
 
@@ -571,7 +591,7 @@ data/
   *.csv                  committed seed data (10 files)
 scripts/
   seed.mjs               constraints + batched idempotent load; --check, --wipe
-  smoke.mjs              runs all five queries, asserts shape and traversal depth
+  smoke.mjs              runs every query, asserts shape and traversal depth
 server/
   db.mjs                 driver lifecycle, connectivity classification, read()
   env.mjs                dependency-free .env loader; real env vars win
@@ -585,6 +605,12 @@ web/src/
   styles.css             mono-led type system
 package/
   build-windows.mjs      portable zip builder (esbuild + pinned node.exe)
+docs/
+  data-model.md          labels, properties, constraints, load order
+  deploy.md              container build and hosted deployment
+  screenshots/           UI captures used above
+Dockerfile               multi-stage build for the hosted demo
+railway.json             builder, start command and health check
 ```
 
 ### npm scripts
@@ -593,7 +619,7 @@ package/
 |---|---|
 | `npm run check` | Verifies connectivity and prints the negotiated Bolt version |
 | `npm run seed` | Creates constraints and loads the CSVs (`-- --wipe` to reset first) |
-| `npm run smoke` | Runs all five queries and asserts the results |
+| `npm run smoke` | Runs every query and asserts the results |
 | `npm run fetch-sources` | Regenerates the CSVs from npm and OSV (needs network) |
 | `npm run build:web` | Builds the frontend with Vite |
 | `npm start` | Starts the server on port 4173 |
