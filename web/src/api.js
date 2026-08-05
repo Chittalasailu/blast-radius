@@ -37,7 +37,7 @@ export async function get(path, params) {
 export const api = {
   health: () => get('/api/health'),
   overview: () => get('/api/overview'),
-  vulnerabilities: () => get('/api/vulnerabilities', { limit: 200 }),
+  vulnerabilities: () => get('/api/vulnerabilities', { limit: 300 }),
   applications: () => get('/api/applications'),
   blastRadius: (id) => get(`/api/blast-radius/${encodeURIComponent(id)}`),
   busFactor: (minApplications) => get('/api/bus-factor', { minApplications, limit: 25 }),

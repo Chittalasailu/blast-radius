@@ -20,7 +20,6 @@ import {
  * away are we?) is encoded as the most legible visual channel on the canvas.
  */
 
-const RING_GAP = 74;
 const COLORS = {
   ink: '#131a24',
   inkFaint: '#78838d',
@@ -95,15 +94,24 @@ export default function BlastMap({ graph, highlightApplication }) {
 
     const cx = () => width / 2;
     const cy = () => height / 2;
+    // Evenly spaced rings that always fill the frame. Spacing the rings by a
+    // fixed pixel gap makes deep graphs overflow and shallow ones look empty.
+    // When an advisory affects several versions they all sit at depth 0. Pinned
+    // to radius 0 they stack on top of each other and their labels become
+    // unreadable, so a multi-version epicentre gets a small inner circle.
+    const affectedCount = nodes.filter((n) => n.affected).length;
+    const epicentreRadius = affectedCount > 1 ? 30 : 0;
+
     const ringRadius = (depth) => {
-      const usable = Math.min(width, height) / 2 - 28;
-      return Math.min(depth * RING_GAP, usable * (depth / Math.max(maxDepth, 1)));
+      if (depth === 0) return epicentreRadius;
+      const usable = Math.min(width, height) / 2 - 34;
+      return (usable / Math.max(maxDepth, 1)) * depth;
     };
 
     const simulation = forceSimulation(nodes)
       .force('link', forceLink(links).id((d) => d.id).distance(46).strength(0.35))
       .force('charge', forceManyBody().strength(-90))
-      .force('collide', forceCollide(14))
+      .force('collide', forceCollide(18))
       .force(
         'radial',
         forceRadial((d) => ringRadius(d.depth), cx(), cy()).strength(0.92),
@@ -116,7 +124,10 @@ export default function BlastMap({ graph, highlightApplication }) {
     function draw() {
       ctx.clearRect(0, 0, width, height);
 
-      // Rings, outermost first, each labelled with its hop count.
+      // Rings, outermost first. Labels sit at the top of each arc rather than
+      // to the right: stacking them vertically keeps them from colliding with
+      // each other the way a single shared baseline does.
+      ctx.font = '600 9px ui-monospace, Consolas, monospace';
       for (let d = maxDepth; d >= 1; d -= 1) {
         const r = ringRadius(d);
         if (r <= 0) continue;
@@ -128,10 +139,15 @@ export default function BlastMap({ graph, highlightApplication }) {
         ctx.stroke();
         ctx.setLineDash([]);
 
+        const text = `${d} HOP${d === 1 ? '' : 'S'}`;
+        const ty = cy() - r;
+        const w = ctx.measureText(text).width;
+        // Punch a gap in the ring so the label is not struck through.
+        ctx.fillStyle = COLORS.surface;
+        ctx.fillRect(cx() - w / 2 - 4, ty - 6, w + 8, 11);
         ctx.fillStyle = COLORS.inkFaint;
-        ctx.font = '600 9px ui-monospace, Consolas, monospace';
-        ctx.textAlign = 'left';
-        ctx.fillText(`${d} HOP${d === 1 ? '' : 'S'}`, cx() + r + 6, cy() - 3);
+        ctx.textAlign = 'center';
+        ctx.fillText(text, cx(), ty + 3);
       }
 
       ctx.strokeStyle = COLORS.ruleSoft;
@@ -164,15 +180,25 @@ export default function BlastMap({ graph, highlightApplication }) {
         ctx.strokeStyle = n.affected ? COLORS.critical : isApp ? COLORS.accent : COLORS.rule;
         ctx.lineWidth = isHighlighted ? 3 : 1.25;
         ctx.stroke();
+      }
 
-        // Only applications and the epicentre carry labels; intermediate
-        // package versions would turn the canvas into noise.
-        if (isApp || n.affected) {
-          ctx.fillStyle = COLORS.ink;
-          ctx.font = `${isHighlighted ? '700' : '500'} 10px ui-monospace, Consolas, monospace`;
-          ctx.textAlign = 'center';
-          ctx.fillText(n.label, n.x, n.y - r - 5);
-        }
+      // Labels in a second pass so a later circle never paints over an
+      // earlier label. Only applications and the epicentre are labelled;
+      // labelling intermediate versions would turn the canvas into noise.
+      ctx.textAlign = 'center';
+      for (const n of nodes) {
+        const isApp = n.type === 'Application';
+        if (!isApp && !n.affected) continue;
+
+        const isHighlighted = highlightApplication && n.id === highlightApplication;
+        const r = n.affected ? 8 : 6.5;
+
+        ctx.font = `${isHighlighted ? '700' : '500'} 10px ui-monospace, Consolas, monospace`;
+        const w = ctx.measureText(n.label).width;
+        ctx.fillStyle = COLORS.surface;
+        ctx.fillRect(n.x - w / 2 - 3, n.y - r - 15, w + 6, 13);
+        ctx.fillStyle = n.affected ? COLORS.critical : COLORS.ink;
+        ctx.fillText(n.label, n.x, n.y - r - 6);
       }
     }
 

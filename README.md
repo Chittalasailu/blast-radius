@@ -511,22 +511,22 @@ an exception.
 *Captured from a live run against a free `c0` CognoDB Cloud instance with the
 committed seed data.*
 
-![Blast radius result table](docs/screenshots/blast-radius.png)
+![Blast radius result table](docs/screenshots/blast-radius.jpg)
 Selecting an advisory lists every reachable application with its hop count, owning team, environment, and the dependency chain that justifies the result.
 
-![Radial blast map](docs/screenshots/blast-map.png)
+![Exposed applications table with shortest paths](docs/screenshots/exposed-applications.jpg)
 The same traversal as a force-directed map: affected versions at the centre, applications pushed out to the ring matching their hop distance.
 
-![Dependency path](docs/screenshots/dependency-path.png)
+![Dependency path](docs/screenshots/dependency-path.jpg)
 "Why is this in our lockfile?" — the shortest path from an application to a package, annotated with the edge type at each step.
 
-![Bus factor](docs/screenshots/bus-factor.png)
+![Bus factor](docs/screenshots/bus-factor.jpg)
 Single-maintainer packages ranked by how many applications transitively reach them.
 
-![Shared surface](docs/screenshots/shared-surface.png)
+![Shared surface](docs/screenshots/shared-surface.jpg)
 The intersection of two applications' full transitive closures, with the size of each side's exclusive set.
 
-![Upgrade impact](docs/screenshots/upgrade-impact.png)
+![Upgrade impact](docs/screenshots/upgrade-impact.jpg)
 Pick a package and version, get the list of applications and teams that need to retest.
 
 ---

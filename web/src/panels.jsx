@@ -2,16 +2,21 @@ import { useEffect, useState } from 'react';
 import { api } from './api.js';
 import { Chain, Empty, EnvPill, ErrorState, Skeleton } from './components.jsx';
 
-/** Small helper: run an async call, tracking loading/error/data. */
+/**
+ * Small helper: run an async call, tracking loading/error/data.
+ *
+ * `ran` distinguishes "no result yet" from "ran and found nothing" — without
+ * it a panel shows its not-found message before the user has done anything.
+ */
 function useAsync(fn, deps, { immediate = true } = {}) {
-  const [state, setState] = useState({ loading: immediate, data: null, error: null });
+  const [state, setState] = useState({ loading: immediate, data: null, error: null, ran: false });
 
   const run = async (...args) => {
-    setState({ loading: true, data: null, error: null });
+    setState({ loading: true, data: null, error: null, ran: true });
     try {
-      setState({ loading: false, data: await fn(...args), error: null });
+      setState({ loading: false, data: await fn(...args), error: null, ran: true });
     } catch (error) {
-      setState({ loading: false, data: null, error });
+      setState({ loading: false, data: null, error, ran: true });
     }
   };
 
@@ -102,7 +107,7 @@ export function BusFactorPanel() {
 export function SharedSurfacePanel({ applications }) {
   const [a, setA] = useState('');
   const [b, setB] = useState('');
-  const [{ loading, data, error }, run] = useAsync(
+  const [{ loading, data, error, ran }, run] = useAsync(
     () => api.sharedSurface(a, b),
     [],
     { immediate: false },
@@ -155,7 +160,7 @@ export function SharedSurfacePanel({ applications }) {
       <ErrorState error={error} />
       {loading ? <Skeleton rows={5} /> : null}
 
-      {!loading && !data && !error ? (
+      {!loading && !ran && !error ? (
         <Empty title="Nothing compared yet">
           Choose two applications and run the comparison.
         </Empty>
@@ -201,7 +206,7 @@ export function SharedSurfacePanel({ applications }) {
 export function UpgradeImpactPanel() {
   const [pkg, setPkg] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  const [{ loading, data, error }, run] = useAsync(
+  const [{ loading, data, error, ran }, run] = useAsync(
     () => api.upgradeImpact(pkg, null),
     [],
     { immediate: false },
@@ -265,7 +270,7 @@ export function UpgradeImpactPanel() {
       <ErrorState error={error} />
       {loading ? <Skeleton rows={6} /> : null}
 
-      {!loading && !data && !error ? (
+      {!loading && !ran && !error ? (
         <Empty title="No package selected">
           Type a package name to see which applications would need a retest.
         </Empty>
@@ -310,7 +315,7 @@ export function UpgradeImpactPanel() {
 export function DependencyPathPanel({ applications }) {
   const [app, setApp] = useState('');
   const [pkg, setPkg] = useState('');
-  const [{ loading, data, error }, run] = useAsync(
+  const [{ loading, data, error, ran }, run] = useAsync(
     () => api.dependencyPath(app, pkg),
     [],
     { immediate: false },
@@ -356,7 +361,13 @@ export function DependencyPathPanel({ applications }) {
       <ErrorState error={error} />
       {loading ? <Skeleton rows={3} /> : null}
 
-      {!loading && data === null && !error ? (
+      {!loading && !ran && !error ? (
+        <Empty title="Nothing traced yet">
+          Pick an application, type a package name, and run the trace.
+        </Empty>
+      ) : null}
+
+      {!loading && ran && data === null && !error ? (
         <Empty title="No path found">
           This application does not reach that package, or the package is not in the graph.
         </Empty>
