@@ -16,14 +16,22 @@ export class DatabaseUnavailableError extends Error {
   }
 }
 
+/** Missing or blank connection settings, as opposed to a failure to connect. */
+export class ConfigurationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'ConfigurationError';
+  }
+}
+
 export function config() {
   const uri = process.env.COGNODB_URI;
   const user = process.env.COGNODB_USER || 'cognodb';
   const password = process.env.COGNODB_PASSWORD;
 
   if (!uri || !password) {
-    throw new Error(
-      'COGNODB_URI and COGNODB_PASSWORD must be set. Copy .env.example to .env and fill it in.',
+    throw new ConfigurationError(
+      'Connection settings are missing. The .env file next to the app must set COGNODB_URI and COGNODB_PASSWORD.',
     );
   }
   return { uri, user, password };
@@ -51,7 +59,11 @@ export async function verifyConnectivity() {
     return { ok: true, address: info.address, protocol: info.protocolVersion };
   } catch (err) {
     lastError = err;
-    return { ok: false, error: err.message };
+    return {
+      ok: false,
+      configured: !(err instanceof ConfigurationError),
+      error: err.message,
+    };
   }
 }
 
@@ -60,7 +72,15 @@ export async function verifyConnectivity() {
  * `$`-parameter binding — no Cypher is ever built by string concatenation.
  */
 export async function read(cypher, params = {}) {
-  const session = getDriver().session({ defaultAccessMode: neo4j.session.READ });
+  let session;
+  try {
+    session = getDriver().session({ defaultAccessMode: neo4j.session.READ });
+  } catch (err) {
+    // Driver construction fails when config is missing; surface it as such
+    // rather than as a generic query failure.
+    throw err;
+  }
+
   try {
     const result = await session.executeRead((tx) => tx.run(cypher, params));
     return result.records.map((r) => r.toObject());
@@ -73,13 +93,17 @@ export async function read(cypher, params = {}) {
 }
 
 export function isConnectivityError(err) {
-  const code = err?.code ?? '';
+  const code = String(err?.code ?? '');
+  const message = String(err?.message ?? '');
   return (
     err instanceof DatabaseUnavailableError ||
     code.includes('ServiceUnavailable') ||
     code.includes('SessionExpired') ||
     code.includes('Neo.ClientError.Security.Unauthorized') ||
-    err?.name === 'Neo4jError' && /routing|connection|ECONNREFUSED|ENOTFOUND|timed out/i.test(err.message)
+    code.includes('Neo.ClientError.Security.AuthenticationRateLimit') ||
+    /ServiceUnavailable|routing|Could not perform discovery|connection|ECONNREFUSED|ENOTFOUND|EAI_AGAIN|ETIMEDOUT|timed out|authentication failure|Unauthorized/i.test(
+      message,
+    )
   );
 }
 

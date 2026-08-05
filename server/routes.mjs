@@ -1,22 +1,35 @@
-import { read, verifyConnectivity, DatabaseUnavailableError } from './db.mjs';
+import {
+  read,
+  verifyConnectivity,
+  DatabaseUnavailableError,
+  ConfigurationError,
+} from './db.mjs';
 import * as Q from './queries.mjs';
 
 /**
- * Every handler funnels failures through `guard` so an unreachable database
- * produces a structured 503 the UI can render as a banner, never a stack
- * trace and never a crashed process.
+ * Every handler funnels failures through `guard` so a misconfigured or
+ * unreachable database produces a structured 503 the UI can render as a
+ * banner, never a stack trace and never a crashed process.
  */
 async function guard(reply, fn) {
   try {
     return await fn();
   } catch (err) {
+    if (err instanceof ConfigurationError) {
+      reply.code(503);
+      return { error: 'database_unavailable', message: err.message };
+    }
     if (err instanceof DatabaseUnavailableError) {
       reply.code(503);
       return {
         error: 'database_unavailable',
         message:
-          'Cannot reach the CognoDB instance. Check that it is running and that the credentials in .env are correct.',
+          'Cannot reach the CognoDB instance. Check that you are online and that the settings in .env are correct.',
       };
+    }
+    if (err.statusCode === 400) {
+      reply.code(400);
+      return { error: 'bad_request', message: err.message };
     }
     reply.code(500);
     return { error: 'query_failed', message: err.message };
