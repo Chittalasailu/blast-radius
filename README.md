@@ -8,6 +8,11 @@ Built for the CognoDB Assignment 2 brief. CognoDB speaks openCypher over Bolt
 5.0–5.4, so the entire data layer is the official `neo4j-driver` package with no
 vendor shims — see [`server/db.mjs`](server/db.mjs).
 
+**Live demo:** https://blast-radius-production-61fc.up.railway.app
+
+The demo runs against a free `c0` CognoDB Cloud instance seeded with the
+committed data. Health check: [`/api/health`](https://blast-radius-production-61fc.up.railway.app/api/health).
+
 ---
 
 ## The use case
