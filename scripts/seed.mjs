@@ -184,7 +184,12 @@ async function main() {
     process.exit(1);
   }
   console.log(`Connected: ${status.address}, Bolt ${status.protocol}\n`);
-  if (args.includes('--check')) return;
+  // The driver keeps the event loop alive, so --check has to close it
+  // explicitly or the process hangs after printing a successful result.
+  if (args.includes('--check')) {
+    await closeDriver();
+    return;
+  }
 
   const driver = getDriver();
   const session = driver.session({ defaultAccessMode: neo4j.session.WRITE });
