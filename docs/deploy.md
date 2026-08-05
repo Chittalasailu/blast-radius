@@ -25,9 +25,9 @@ the start command and a health check.
 
    | Variable | Value |
    | --- | --- |
-   | `COGNODB_URI` | `bolt+s://<instance-id>.databases.cognodb.cloud` |
+   | `COGNODB_URI` | `bolt+s://<instance-id>.databases.cognodb.com` |
    | `COGNODB_USER` | `cognodb` |
-   | `COGNODB_PASSWORD` | the password shown once at instance creation |
+   | `COGNODB_PASSWORD` | from the instance's Connect panel in the console |
 
    `HOST` and `PORT` are already set in the `Dockerfile` (`0.0.0.0`, `8080`).
    If the platform injects its own `PORT`, that value wins — the server reads
@@ -48,7 +48,7 @@ Any host that can run a Dockerfile works — Fly.io, Render, Cloud Run:
 ```bash
 docker build -t blast-radius .
 docker run -p 8080:8080 \
-  -e COGNODB_URI='bolt+s://<instance-id>.databases.cognodb.cloud' \
+  -e COGNODB_URI='bolt+s://<instance-id>.databases.cognodb.com' \
   -e COGNODB_USER=cognodb \
   -e COGNODB_PASSWORD='<password>' \
   blast-radius

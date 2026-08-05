@@ -197,13 +197,17 @@ and the graph is reproducible by anyone cloning the repository.
 4. When the instance finishes provisioning, the console shows the connection
    details:
    - a connection URI of the form
-     `bolt+s://<instance-id>.databases.cognodb.cloud`
+     `bolt+s://<instance-id>.databases.cognodb.com`
+
+     Note: the assignment brief writes this host as `.databases.cognodb.cloud`.
+     The console issues `.databases.cognodb.com`, which is what this project
+     uses and what the live demo connects to.
    - the username `cognodb`
    - a generated password
 
-   **The password is shown exactly once.** Copy it before closing the dialog. If
-   you lose it, reset it from the instance's settings page — there is no way to
-   read it back.
+   The password is not shown again after creation, but it is not lost either:
+   the instance's **Connect** panel re-displays it on demand, so there is no
+   need to delete or recreate an instance to recover it.
 5. Wait for the instance status to read *Running* before continuing. A `c0`
    typically takes under a minute.
 
@@ -216,7 +220,7 @@ cp .env.example .env
 Fill in the two values you just saved:
 
 ```ini
-COGNODB_URI=bolt+s://<instance-id>.databases.cognodb.cloud
+COGNODB_URI=bolt+s://<instance-id>.databases.cognodb.com
 COGNODB_USER=cognodb
 COGNODB_PASSWORD=<generated-password>
 ```
