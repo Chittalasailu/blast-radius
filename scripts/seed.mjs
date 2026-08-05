@@ -23,7 +23,9 @@ const BATCH = 1000;
 
 function readCsv(name) {
   const text = readFileSync(path.join(ROOT, 'data', name), 'utf8');
-  const lines = text.split('\n').filter((l) => l !== '');
+  // Tolerate CRLF: a stray \r would end up inside the last column's value and
+  // silently break every MATCH that keys off it.
+  const lines = text.split(/\r?\n/).filter((l) => l !== '');
   const columns = splitCsvLine(lines[0]);
   return lines.slice(1).map((line) => {
     const cells = splitCsvLine(line);
@@ -156,15 +158,17 @@ const STEPS = [
   },
 ];
 
+// OPTIONAL MATCH so an empty label yields 0 rather than collapsing the whole
+// result to zero rows.
 const COUNTS = `
-MATCH (p:Package)        WITH count(p) AS packages
-MATCH (v:Version)        WITH packages, count(v) AS versions
-MATCH (a:Application)    WITH packages, versions, count(a) AS applications
-MATCH (t:Team)           WITH packages, versions, applications, count(t) AS teams
-MATCH (vu:Vulnerability) WITH packages, versions, applications, teams, count(vu) AS vulnerabilities
-MATCH (m:Maintainer)     WITH packages, versions, applications, teams, vulnerabilities, count(m) AS maintainers
-MATCH ()-[r:REQUIRES]->() WITH packages, versions, applications, teams, vulnerabilities, maintainers, count(r) AS requires
-MATCH ()-[af:AFFECTS]->() RETURN packages, versions, applications, teams, vulnerabilities, maintainers, requires, count(af) AS affects
+OPTIONAL MATCH (p:Package)        WITH count(p) AS packages
+OPTIONAL MATCH (v:Version)        WITH packages, count(v) AS versions
+OPTIONAL MATCH (a:Application)    WITH packages, versions, count(a) AS applications
+OPTIONAL MATCH (t:Team)           WITH packages, versions, applications, count(t) AS teams
+OPTIONAL MATCH (vu:Vulnerability) WITH packages, versions, applications, teams, count(vu) AS vulnerabilities
+OPTIONAL MATCH (m:Maintainer)     WITH packages, versions, applications, teams, vulnerabilities, count(m) AS maintainers
+OPTIONAL MATCH ()-[r:REQUIRES]->() WITH packages, versions, applications, teams, vulnerabilities, maintainers, count(r) AS requires
+OPTIONAL MATCH ()-[af:AFFECTS]->() RETURN packages, versions, applications, teams, vulnerabilities, maintainers, requires, count(af) AS affects
 `;
 
 async function main() {

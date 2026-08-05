@@ -277,8 +277,8 @@ The app is at **<http://localhost:4173>**. The server binds `127.0.0.1` only.
 For development with hot reload, run the two halves separately:
 
 ```bash
-npm run dev:server    # node --watch on the Fastify API
-npm run dev:web       # Vite dev server with proxying to the API
+npm run dev:server    # node --watch on the Fastify API, port 4173
+npm run dev:web       # Vite dev server on port 5174, proxying /api to 4173
 ```
 
 ### 7. Optional: build the portable Windows package
@@ -423,7 +423,7 @@ RETURN shared                     AS sharedPackages,
        size(shared)               AS sharedCount,
        size(aPackages)            AS aCount,
        size(bPackages)            AS bCount,
-       size([n IN aPackages WHERE NOT n IN aPackages]) AS aOnlyCount,
+       size([n IN aPackages WHERE NOT n IN bPackages]) AS aOnlyCount,
        size([n IN bPackages WHERE NOT n IN aPackages]) AS bOnlyCount
 ```
 

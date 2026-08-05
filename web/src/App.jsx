@@ -27,10 +27,10 @@ function StatusBar({ health, overview }) {
       <span className="spacer" />
       {overview ? (
         <>
-          <span className="stat"><b>{overview.applications}</b> applications</span>
-          <span className="stat"><b>{overview.packages.toLocaleString()}</b> packages</span>
-          <span className="stat"><b>{overview.requires.toLocaleString()}</b> dependency edges</span>
-          <span className="stat"><b>{overview.vulnerabilities}</b> advisories</span>
+          <span className="stat"><b>{overview.applications ?? 0}</b> applications</span>
+          <span className="stat"><b>{(overview.packages ?? 0).toLocaleString()}</b> packages</span>
+          <span className="stat"><b>{(overview.requires ?? 0).toLocaleString()}</b> dependency edges</span>
+          <span className="stat"><b>{overview.vulnerabilities ?? 0}</b> advisories</span>
         </>
       ) : null}
       <span className="stat">

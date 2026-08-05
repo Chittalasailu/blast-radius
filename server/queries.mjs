@@ -37,12 +37,18 @@ RETURN app.name             AS name,
 ORDER BY app.name
 `;
 
+/**
+ * OPTIONAL MATCH rather than MATCH throughout: a chained grouped aggregation
+ * over an empty label returns *zero* rows, which would leave the UI with no
+ * counts at all on a partially seeded database. OPTIONAL MATCH always yields
+ * one row, and count(null) is 0.
+ */
 export const OVERVIEW = /* cypher */ `
-MATCH (p:Package)      WITH count(p) AS packages
-MATCH (v:Version)      WITH packages, count(v) AS versions
-MATCH (a:Application)  WITH packages, versions, count(a) AS applications
-MATCH (vu:Vulnerability) WITH packages, versions, applications, count(vu) AS vulnerabilities
-MATCH ()-[r:REQUIRES]->() WITH packages, versions, applications, vulnerabilities, count(r) AS requires
+OPTIONAL MATCH (p:Package)        WITH count(p) AS packages
+OPTIONAL MATCH (v:Version)        WITH packages, count(v) AS versions
+OPTIONAL MATCH (a:Application)    WITH packages, versions, count(a) AS applications
+OPTIONAL MATCH (vu:Vulnerability) WITH packages, versions, applications, count(vu) AS vulnerabilities
+OPTIONAL MATCH ()-[r:REQUIRES]->() WITH packages, versions, applications, vulnerabilities, count(r) AS requires
 RETURN packages, versions, applications, vulnerabilities, requires
 `;
 

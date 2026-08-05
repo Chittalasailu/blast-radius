@@ -70,7 +70,10 @@ export default function BlastMap({ graph, highlightApplication }) {
       .filter((l) => nodes.some((n) => n.id === l.source) && nodes.some((n) => n.id === l.target))
       .map((l) => ({ ...l }));
 
-    const depths = computeDepths(nodes, graph.links);
+    // Use the filtered links, not graph.links: a link pointing at a node that
+    // was dropped would contribute a hop distance for a node that is never
+    // drawn, pulling real nodes onto the wrong ring.
+    const depths = computeDepths(nodes, links);
     const maxDepth = Math.max(1, ...[...depths.values()]);
     nodes.forEach((n) => {
       n.depth = depths.get(n.id) ?? maxDepth;

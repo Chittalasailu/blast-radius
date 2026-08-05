@@ -80,9 +80,19 @@ function resolveRange(doc, range) {
   return pool[0] ?? doc.latest;
 }
 
+/**
+ * OSV range bounds are not always three-part ("1.2", "0"), so parts are padded
+ * before comparison. Without the padding a missing part yields NaN and every
+ * comparison against it silently reads as "not less than".
+ */
+function parts(v) {
+  const nums = String(v).split('-')[0].split('.').map((n) => Number.parseInt(n, 10));
+  return [0, 1, 2].map((i) => (Number.isFinite(nums[i]) ? nums[i] : 0));
+}
+
 function cmpVersion(a, b) {
-  const pa = a.split('.').map(Number);
-  const pb = b.split('.').map(Number);
+  const pa = parts(a);
+  const pb = parts(b);
   for (let i = 0; i < 3; i += 1) {
     if (pa[i] !== pb[i]) return pa[i] - pb[i];
   }
