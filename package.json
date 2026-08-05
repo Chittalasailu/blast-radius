@@ -1,0 +1,38 @@
+{
+  "name": "blast-radius",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency blast-radius explorer backed by CognoDB Cloud",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node scripts/seed.mjs --check",
+    "fetch-sources": "node data/fetch-sources.mjs",
+    "seed": "node scripts/seed.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "dev:server": "node --watch server/index.mjs",
+    "dev:web": "vite --config web/vite.config.js",
+    "build:web": "vite build --config web/vite.config.js",
+    "start": "node server/index.mjs",
+    "package:windows": "node package/build-windows.mjs"
+  },
+  "dependencies": {
+    "fastify": "^5.2.1",
+    "@fastify/static": "^8.0.4",
+    "neo4j-driver": "^5.28.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "d3-force": "^3.0.0",
+    "esbuild": "^0.24.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.11"
+  },
+  "allowScripts": {
+    "esbuild@0.24.2": true,
+    "esbuild@0.25.12": true
+  }
+}

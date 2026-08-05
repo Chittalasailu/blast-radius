@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+
+# Windows distribution artifacts (contain a real .env and a 100MB node.exe)
+package/build/
+package/cache/
+*.zip
+
+.DS_Store
+*.log
